@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+
+<body class="bg-light">
+    <header class="bg-dark text-light py-3 shadow">
+        <div class="container d-flex justify-content-between align-items-center ">
+            <h1 class="text-warning fw-bold m-0"><i class="bi bi-heart-pulse"></i> NutriApp</h1>
+            <nav class="d-flex flex-wrap align-items-center">
+                <a href="acerca.html" class="text-light px-3 text-decoration-none">Acerca de</a>
+                <a href="herramientas.html" class="text-light px-3 text-decoration-none">Funciones</a>
+                <a href="registro.html" class="text-light px-3 text-decoration-none">Servicios</a>
+
+                {% if usuario %}
+                <a href="/perfil_de_usuario" class="btn btn-secondary text-dark">Mi Perfil</a>
+                <a href="/cerrar_sesion" class="btn btn-primary text-dark">Cerrar sesión</a>
+                {% else %}
+                <a href="login.html" class="btn btn-warning text-light">Iniciar Sesión</a>
+                {% endif %}
+            </nav>
+
+            </nav>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar" class="col-md-3 col-lg-2 p-0 bg-dark text-light">
+                <div class="p-3 bg-dark border-bottom border-secondary">
+                    <h5 class="text-warning mb-0"><i class="bi bi-list"></i> Menú Principal</h5>
+                </div>
+                <nav class="nav flex-column mt-3">
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="index.html">
+                        <i class="bi bi-house-fill me-2"></i> Inicio
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="login.html">
+                        <i class="bi bi-people-fill me-2"></i> Usuarios
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="educacion.html">
+                        <i class="bi bi-basket-fill me-2"></i> Artículos Educativos
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="recetas.html">
+                        <i class="bi bi-graph-up me-2"></i> Banco de Recetas Saludables
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="herramientas.html">
+                        <i class="bi bi-gear-fill me-2"></i> Módulo de Herramientas
+                    </a>
+                    <a class="nav-link text-light py-3 border-bottom border-secondary" href="ejercicios.html">
+                        <i class="bi bi bi-person-arms-up me-2"></i> Ejercicios básicos
+                    </a>
+                </nav>
+            </div>
+
+            <div id="content" class="col-md-9 col-lg-10 p-4 ms-auto">
+                <button class="btn btn-primary mb-4 d-md-none" type="button">
+                    <i class="bi bi-list"></i> Menú
+                </button>
+
+                <main class="flex-grow-1">
+                    <div class="container">
+                        <div class="text-center mb-5 py-4 bg-white rounded shadow-sm">
+                            <h1 class="display-5 fw-bold text-dark mb-3">Bienvenido a <span
+                                    class="text-warning">NutriApp</span></h1>
+                            <p class="lead mb-4">Tu aplicación nutricional para alcanzar tus metas de salud y bienestar.
+                            </p>
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control"
+                                            placeholder="Buscar planes nutricionales...">
+                                        <button class="btn btn-warning" type="button">Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="text-center mb-4 text-dark">Funcionalidades principales</h2>
+                        <div class="row g-4 mb-5">
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body text-center p-4">
+                                        <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                            style="width: 80px; height: 80px;">
+                                            <i class="bi bi-arrow-down-right text-dark" style="font-size: 2rem;"></i>
+                                        </div>
+                                        <h5 class="card-title">Perder peso</h5>
+                                        <p class="card-text">Reduce tu peso de forma saludable con planes personalizados
+                                            y seguimiento constante.</p>
+                                        <a href="#" class="btn btn-outline-success mt-2">Comenzar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body text-center p-4">
+                                        <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                            style="width: 80px; height: 80px;">
+                                            <i class="bi bi-arrow-up-right text-dark" style="font-size: 2rem;"></i>
+                                        </div>
+                                        <h5 class="card-title">Ganar masa muscular</h5>
+                                        <p class="card-text">Aumenta tu masa muscular con rutinas efectivas y una dieta
+                                            equilibrada.</p>
+                                        <a href="registro.html" class="btn btn-outline-success mt-2">Comenzar</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card h-100 shadow-sm border-0">
+                                    <div class="card-body text-center p-4">
+                                        <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                            style="width: 80px; height: 80px;">
+                                            <i class="bi bi-arrow-left-right text-dark" style="font-size: 2rem;"></i>
+                                        </div>
+                                        <h5 class="card-title">Mantener peso</h5>
+                                        <p class="card-text">Equilibra tu alimentación y mantén un peso saludable a
+                                            largo plazo.</p>
+                                        <a href="registro.html" class="btn btn-outline-success mt-2">Comenzar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="text-center mb-4 text-dark p-3">Otras herramientas útiles</h2>
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-4 shadow-sm border-0">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                        style="width: 70px; height: 70px;">
+                                        <i class="bi bi-droplet text-dark" style="font-size: 1.8rem;"></i>
+                                    </div>
+                                    <h5 class="mt-3">Registro de Agua</h5>
+                                    <p>Controla tu hidratación diaria y recibe recordatorios personalizados.</p>
+                                    <a href="herramientas.html" class="btn btn-sm btn-outline-success">Usar
+                                        herramienta</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-4 shadow-sm border-0">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                        style="width: 70px; height: 70px;">
+                                        <i class="bi bi-bar-chart-fill"></i>
+                                    </div>
+                                    <h5 class="mt-3">Contador de Calorías</h5>
+                                    <p>Registra tus comidas y controla tu consumo calórico diario.</p>
+                                    <a href="herramientas.html" class="btn btn-sm btn-outline-success">Usar
+                                        herramienta</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-4 shadow-sm border-0">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                        style="width: 70px; height: 70px;">
+                                        <i class="bi bi-calculator text-dark" style="font-size: 1.8rem;"></i>
+                                    </div>
+                                    <h5 class="mt-3">Calculadoras</h5>
+                                    <p>Calcula tu índice de masa corporal y obtén recomendaciones personalizadas.</p>
+                                    <a href="herramientas.html" class="btn btn-sm btn-outline-success">Usar
+                                        herramienta</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 p-3">
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-4 shadow-sm border-0">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                        style="width: 70px; height: 70px;">
+                                        <i class="bi bi-activity"></i>
+                                    </div>
+                                    <h5 class="mt-3">Mejorar digestión</h5>
+                                    <p>Conoce alimentos y dietas para una digestion sana</p>
+                                    <a href="registro.html" class="btn btn-sm btn-outline-success">Usar herramienta</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 p-2">
+                                <div class="card h-100 text-center p-4 shadow-sm border-0">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                        style="width: 70px; height: 70px;">
+                                        <i class="bi bi-capsule"></i>
+                                    </div>
+                                    <h5 class="mt-3">Controlar una condición</h5>
+                                    <p>condiociones como la diabetes, hipertensión pueden ser controladas</p>
+                                    <a href="registro.html" class="btn btn-sm btn-outline-success">Usar herramienta</a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card h-100 text-center p-4 shadow-sm border-0">
+                                    <div class="bg-danger bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3"
+                                        style="width: 70px; height: 70px;">
+                                        <i class="bi bi-card-checklist" style="font-size: 1.8rem;"></i>></i>
+                                    </div>
+                                    <h5 class="mt-3">Recetas</h5>
+                                    <p>Calcula tu índice de masa corporal y obtén recomendaciones personalizadas.</p>
+                                    <a href="registro.html" class="btn btn-sm btn-outline-success">Usar herramienta</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-warning">NutriApp</h5>
+                    <p>Tu compañero de salud y bienestar.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>Enlaces rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Acerca de</a></li>
+                        <li><a href="https://youtu.be/AGM8BMqBcTo?si=z2L7ODLz3AuIJdIL"
+                                class="text-light text-decoration-none">Karla Valdez lome 3-D</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Síguenos</h5>
+                    <div class="d-flex justify-content-center">
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"
+                                style="font-size: 1.5rem;"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter" style="font-size: 1.5rem;"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram" style="font-size: 1.5rem;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <p class="m-0">© 2023 NutriApp. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
